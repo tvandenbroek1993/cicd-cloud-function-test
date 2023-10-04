@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+      'functions', 'deploy', 'cicd-function',
+      '--trigger-http',
+      '--runtime', 'python310',
+      '--entry-point', 'main',
+        '--memory', '256MB',
+      '--timeout', '60s',
+      '--region', 'europe-west1'
+    ]
